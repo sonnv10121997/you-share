@@ -1,23 +1,27 @@
 <div class="top-bar">
-  <h2>YouShare</h2>
+  <h2><%= link_to "YouShare", root_url, class: "top-bar__link" %></h2>
 
   <% if user_signed_in? %>
     <div class="top-bar__after-login">
       Welcome <%= current_user.email %>
-      <button>Share a movie</button>
+
+      <%= button_tag do %>
+        <%= link_to "Share a movie", new_shared_movie_path, class: "top-bar__link" %>
+      <% end %>
+
       <%= button_to "Logout", destroy_user_session_path, method: :delete %>
     </div>
   <% else %>
     <div class="top-bar__login-form">
-      <%= form_for(user, url: user_session_path) do |f| %>
-        <%= f.email_field :email, placeholder: "email" %>
-        <%= f.password_field :password, placeholder: "password" %>
+      <%= form_tag user_session_path do %>
+        <%= email_field_tag :email, nil, placeholder: "email", name: "user[email]" %>
+        <%= password_field_tag :password, nil, placeholder: "password", name: "user[password]" %>
 
-        <%= f.submit "Log in" %>
+        <%= submit_tag "Log in" %>
       <% end %>
 
       <%= button_tag do %>
-        <%= link_to "Register", new_user_registration_path, class: "top-bar__login-form__link" %>
+        <%= link_to "Register", new_user_registration_path, class: "top-bar__link" %>
       <% end %>
     </div>
   <% end %>

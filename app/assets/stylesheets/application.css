@@ -21,7 +21,8 @@
   border-bottom: 2px solid gray;
 }
 
-.top-bar__after-login, .top-bar__login-form > form {
+.top-bar__after-login,
+.top-bar__login-form>form {
   display: flex;
   gap: 10px;
 }
@@ -31,10 +32,30 @@
   gap: 5px;
 }
 
-.top-bar__login-form__link {
+.top-bar__link {
   text-decoration: none;
 }
 
-.top-bar__login-form__link:visited {
+.top-bar__link:visited {
   color: initial;
+}
+
+.shared-movie-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.shared-movie-form__legend {
+  padding: 0 10px;
+}
+
+.shared-movie-form__fieldset {
+  padding: 40px 70px 40px 20px;
+  max-width: 311px;
+}
+
+.shared-movie-form__submit {
+  text-align: center;
+  margin-top: 30px;
 }
