@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Shared movies</h1>
+
+<div id="shared_movies">
+  <% @shared_movies.each do |shared_movie| %>
+    <%= render shared_movie %>
+    <p>
+      <%= link_to "Show this shared movie", shared_movie %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New shared movie", new_shared_movie_path %>

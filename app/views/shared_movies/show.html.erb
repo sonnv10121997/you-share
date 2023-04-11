@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @shared_movie %>
+
+<div>
+  <%= link_to "Edit this shared movie", edit_shared_movie_path(@shared_movie) %> |
+  <%= link_to "Back to shared movies", shared_movies_path %>
+
+  <%= button_to "Destroy this shared movie", @shared_movie, method: :delete %>
+</div>
