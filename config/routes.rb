@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  resources :shared_movies
   devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :shared_movies
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root "shared_movies#index"
 end

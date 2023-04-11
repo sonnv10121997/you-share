@@ -4,6 +4,7 @@ class SharedMoviesController < ApplicationController
   # GET /shared_movies or /shared_movies.json
   def index
     @shared_movies = SharedMovie.all
+    @user = user_signed_in? ? current_user : User.new
   end
 
   # GET /shared_movies/1 or /shared_movies/1.json

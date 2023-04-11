@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid gray;
+}
+
+.top-bar__after-login, .top-bar__login-form > form {
+  display: flex;
+  gap: 10px;
+}
+
+.top-bar__login-form {
+  display: flex;
+  gap: 5px;
+}
+
+.top-bar__login-form__link {
+  text-decoration: none;
+}
+
+.top-bar__login-form__link:visited {
+  color: initial;
+}

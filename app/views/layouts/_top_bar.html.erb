@@ -1,0 +1,24 @@
+<div class="top-bar">
+  <h2>YouShare</h2>
+
+  <% if user_signed_in? %>
+    <div class="top-bar__after-login">
+      Welcome <%= current_user.email %>
+      <button>Share a movie</button>
+      <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+    </div>
+  <% else %>
+    <div class="top-bar__login-form">
+      <%= form_for(user, url: user_session_path) do |f| %>
+        <%= f.email_field :email, placeholder: "email" %>
+        <%= f.password_field :password, placeholder: "password" %>
+
+        <%= f.submit "Log in" %>
+      <% end %>
+
+      <%= button_tag do %>
+        <%= link_to "Register", new_user_registration_path, class: "top-bar__login-form__link" %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
