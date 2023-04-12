@@ -1,4 +1,5 @@
 class SharedMoviesController < ApplicationController
+  before_action :authenticate_user!, only: [:new]
   before_action :set_shared_movie, only: %i[ show edit update destroy ]
 
   # GET /shared_movies or /shared_movies.json
