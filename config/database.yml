@@ -51,3 +51,4 @@ test:
 production:
   <<: *default
   database: you_share_production
+  url: <%= ENV["DATABASE_URL"] %>
