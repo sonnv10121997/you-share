@@ -25,7 +25,7 @@ class SharedMoviesController < ApplicationController
 
     respond_to do |format|
       if @shared_movie.save
-        format.html { redirect_to shared_movie_url(@shared_movie), notice: "Shared movie was successfully created." }
+        format.html { redirect_to shared_movies_path, notice: "Shared movie was successfully created." }
         format.json { render :show, status: :created, location: @shared_movie }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -65,6 +65,6 @@ class SharedMoviesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def shared_movie_params
-      params.require(:shared_movie).permit(:url, :user_id)
+      params.require(:shared_movie).permit(:url, :user_id, :title)
     end
 end

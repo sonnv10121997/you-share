@@ -1,7 +1,7 @@
-<fieldset class="shared-movie-form__fieldset">
-  <legend class="shared-movie-form__legend">Share a Youtube movie</legend>
+<fieldset class="new-shared-movie__fieldset">
+  <legend class="new-shared-movie__legend">Share a Youtube movie</legend>
 
-  <%= form_with(model: shared_movie) do |form| %>
+  <%= form_with model: shared_movie, class: "new-shared-movie__form" do |form| %>
     <% if shared_movie.errors.any? %>
       <div style="color: red">
         <span><%= pluralize(shared_movie.errors.count, "error") %> prohibited this shared_movie from being saved:</span>
@@ -14,11 +14,19 @@
       </div>
     <% end %>
 
-    <%= form.label :url, "Youtube URL: " %>
-    <%= form.text_field :url %>
+    <div class="new-shared-movie__field">
+      <%= form.label :url, "Youtube URL: " %>
+      <%= form.text_field :url %>
+    </div>
+
+    <div class="new-shared-movie__field">
+      <%= form.label :title, "Title: " %>
+      <%= form.text_field :title %>
+    </div>
+
     <%= form.text_field :user_id, value: current_user.id, hidden: true %>
 
-    <div class="shared-movie-form__submit">
+    <div class="new-shared-movie__submit new-shared-movie__field">
       <%= form.submit value: "Share" %>
     </div>
   <% end %>

@@ -1,12 +1,10 @@
-<div id="<%= dom_id shared_movie %>">
-  <p>
-    <strong>Url:</strong>
-    <%= shared_movie.url %>
-  </p>
+<div class="shared-movies">
+  <div class="shared-movies__movie">
+    <iframe width="373" height="210" src=<%= shared_movie.url %> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
 
-  <p>
-    <strong>User:</strong>
-    <%= shared_movie.user_id %>
-  </p>
-
+  <div class="shared-movies__title">
+    <h4><%= shared_movie.title %></h4>
+    <p>Shared by: <%= shared_movie.user.email %></p>
+  </div>
 </div>
